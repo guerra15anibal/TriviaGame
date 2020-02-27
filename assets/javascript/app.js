@@ -4,9 +4,9 @@ $(document).ready(function () {
         {
             questions: "What is Colorado's State animal?",
             answers: [
-                "Rocky Moutian Goat", 
-                "Big Foot", 
-                "Ovis Canadensis", 
+                "Rocky Moutian Goat",
+                "Big Foot",
+                "Ovis Canadensis",
                 "Moose"
             ],
             correctAnswer: "Ovis Canadensis"
@@ -19,27 +19,27 @@ $(document).ready(function () {
                 "Lake Trout",
                 "Greenback Cutthroat Trout"
             ],
-            correctAnswer: "d"
+            correctAnswer: "Greenback Cutthroat Trout"
         },
         {
             questions: "What is Colorado's State song?",
             answers: [
-                 "Where the Columbine's Grow",
-                 "Oh Colorado!",
-                 "I'ev Been Working on the Railroad",
-                 "Baby Got Back"
+                "Where the Columbine's Grow",
+                "Oh Colorado!",
+                "I'ev Been Working on the Railroad",
+                "Baby Got Back"
             ],
-            correctAnswer: "a"
+            correctAnswer: "Where the Columbine's Grow"
         },
         {
             questions: "What is Colorado's State flower?",
             answers: [
                 "Daisy",
-                "Columbine Flower",
+                "Columbine",
                 "Sunflower",
                 "Kush"
             ],
-            correctAnswer: "b"
+            correctAnswer: "Columbine"
         },
         {
             questions: "What is Colorado's State fruit?",
@@ -49,7 +49,7 @@ $(document).ready(function () {
                 "Palisade Peach",
                 "Oranges"
             ],
-            correctAnswer: "c"
+            correctAnswer: "Palisade Peach"
         },
         {
             questions: "What is Colorado's most famous Boxer?",
@@ -59,12 +59,12 @@ $(document).ready(function () {
                 "Mike Tyson",
                 "Jack Dempsey"
             ],
-            correctAnswer: "d"
+            correctAnswer: "Jack Dempsey"
         }
     ];
 
-    var corret = 0;
-    var incorrect = 0;
+    var corret = [];
+    var incorrect = [];
     let counter = 30;
 
     function startQuiz() {
