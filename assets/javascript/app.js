@@ -32,12 +32,32 @@ var myQuestions = [
 {
     questions: "What is Colorado's State flower?",
     answers: {
-    a: "Columbine Flower",
-    b: "Roses",
+    a: "Daisy",
+    b: "Columbine Flower",
     c: "SunFlower",
     d: "Kush"
 },
-    correctAnswer: "d" 
+    correctAnswer: "b" 
 },
+{
+    questions: "What is Colorado's State fruit?",
+    answers: {
+    a: "Green Apples",
+    b: "Grapes",
+    c: "Palisade Peach",
+    d: "Oranges"
+},
+    correctAnswer: "c" 
+},
+{
+    questions: "What is Colorado's most famous Boxer?",
+    answers: {
+    a: "Muhammad Ali",
+    b: "Rocky Marciano",
+    c: "Mike Tyson",
+    d: "Jack Dempsey"
+},
+    correctAnswer: "d" 
+}
 
 ]
