@@ -1,80 +1,123 @@
 $(document).ready(function () {
 
-    var seconds = 30, $seconds = document.querySelector(".timeLeft");
-    (function countdown() {
-        $seconds.textContent = seconds + " time remaining";
-        if (seconds-- > 0) setTimeout(countdown, 1000);
-        else{
-            document.write("GAME OVER")
-        }
-    })();
-
-    
-    
     var myQuestions = [
         {
             questions: "What is Colorado's State animal?",
-            answers: {
-                a: "Rocky Moutian Goat",
-                b: "Big Foot",
-                c: "Ovis Canadensis",
-                d: "Moose"
-            },
-            correctAnswer: "c"
+            answers: [
+                "Rocky Moutian Goat", 
+                "Big Foot", 
+                "Ovis Canadensis", 
+                "Moose"
+            ],
+            correctAnswer: "Ovis Canadensis"
         },
         {
             questions: "What is Colorado's State fish?",
-            answers: {
-                a: "Rainbow Trout",
-                b: "Great White Shark",
-                c: "Lake Trout",
-                d: "Greenback Cutthroat Trout"
-            },
+            answers: [
+                "Rainbow Trout",
+                "Great White Shark",
+                "Lake Trout",
+                "Greenback Cutthroat Trout"
+            ],
             correctAnswer: "d"
         },
         {
             questions: "What is Colorado's State song?",
-            answers: {
-                a: "Where the Columbine's Grow",
-                b: "Oh Colorado!",
-                c: "I'ev Been Working on the Railroad",
-                d: "Baby Got Back"
-            },
+            answers: [
+                 "Where the Columbine's Grow",
+                 "Oh Colorado!",
+                 "I'ev Been Working on the Railroad",
+                 "Baby Got Back"
+            ],
             correctAnswer: "a"
         },
         {
             questions: "What is Colorado's State flower?",
-            answers: {
-                a: "Daisy",
-                b: "Columbine Flower",
-                c: "Sunflower",
-                d: "Kush"
-            },
+            answers: [
+                "Daisy",
+                "Columbine Flower",
+                "Sunflower",
+                "Kush"
+            ],
             correctAnswer: "b"
         },
         {
             questions: "What is Colorado's State fruit?",
-            answers: {
-                a: "Green Apples",
-                b: "Grapes",
-                c: "Palisade Peach",
-                d: "Oranges"
-            },
+            answers: [
+                "Green Apples",
+                "Grapes",
+                "Palisade Peach",
+                "Oranges"
+            ],
             correctAnswer: "c"
         },
         {
             questions: "What is Colorado's most famous Boxer?",
-            answers: {
-                a: "Muhammad Ali",
-                b: "Rocky Marciano",
-                c: "Mike Tyson",
-                d: "Jack Dempsey"
-            },
+            answers: [
+                "Muhammad Ali",
+                "Rocky Marciano",
+                "Mike Tyson",
+                "Jack Dempsey"
+            ],
             correctAnswer: "d"
         }
     ];
 
+    var corret = 0;
+    var incorrect = 0;
+    let counter = 30;
 
-   
+    function startQuiz() {
+        timer = setInterval(countdown, 1000);
+        $(".timeLeft").prepend(
+            "<h2>Time Left: <span id='time-left'>30</span> Seconds</h2>"
+        )
+        for (let i = 0; i < myQuestions.length; i++) {
+            $(".questions").append("<h2>" + myQuestions[i].questions + "</h2>")
+
+            for (let j = 0; j < myQuestions[i].answers.length; j++) {
+                $(".questions").append("<input type='radio' name='question-" + i + "'value='" + myQuestions[i].answers[j] + "''>" + myQuestions[i].answers[j])
+
+            }
+
+        }
+    }
+    startQuiz();
+    function countdown() {
+        counter--;
+        $("#time-left").text(counter);
+        if (counter == 0) {
+            gameOver();
+        }
+    }
+    $(document).on("click", "#submit", function () {
+        console.log("submit btn click")
+        gameOver();
+
+    })
+    function gameOver() {
+        var inputs = $(".questions").children("input:checked");
+        console.log(inputs)
+        for (let i = 0; i < inputs.length; i++) {
+            if ($(inputs[i]).val() === myQuestions[i].correctAnswer) {
+                corret++;
+                console.log(corret);
+            }
+            else {
+                incorrect++;
+                console.log(incorrect)
+            }
+
+        }
+        displayResults();
+    }
+    function displayResults() {
+        console.log("display results functions")
+        clearInterval(timer);
+        $(".questions").html("<h2>Results </h2>");
+        $(".questions").append("<h3> Correct Answers: " + corret + "</h3>")
+        $(".questions").append("<h3> InCorrect Answers: " + incorrect + "</h3>")
+    }
+
 
 });
