@@ -1,5 +1,16 @@
 $(document).ready(function () {
 
+    var seconds = 30, $seconds = document.querySelector(".timeLeft");
+    (function countdown() {
+        $seconds.textContent = seconds + " time remaining";
+        if (seconds-- > 0) setTimeout(countdown, 1000);
+        else{
+            document.write("GAME OVER")
+        }
+    })();
+
+    
+    
     var myQuestions = [
         {
             questions: "What is Colorado's State animal?",
@@ -63,12 +74,7 @@ $(document).ready(function () {
         }
     ];
 
-    // var seconds = 30, $seconds = document.querySelector(".timeLeft");
-    // (function countdown() {
-    //     $seconds.textContent = seconds + " time remaining";
-    //     if (seconds-- > 0) setTimeout(countdown, 1000);
-    //     else{
-    //         document.write("GAME OVER")
-    //     }
-    // })();
+
+   
+
 });
