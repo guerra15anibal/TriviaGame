@@ -63,8 +63,8 @@ $(document).ready(function () {
         }
     ];
 
-    var corret = [];
-    var incorrect = [];
+    var corret = 0;
+    var incorrect = 0;
     let counter = 30;
 
     function startQuiz() {
@@ -73,10 +73,10 @@ $(document).ready(function () {
             "<h2>Time Left: <span id='time-left'>30</span> Seconds</h2>"
         )
         for (let i = 0; i < myQuestions.length; i++) {
-            $(".questions").append("<h2>" + myQuestions[i].questions + "</h2>")
+            $(".questions").append("<br><h2>" + myQuestions[i].questions + "</h2>")
 
             for (let j = 0; j < myQuestions[i].answers.length; j++) {
-                $(".questions").append("<input type='radio' name='question-" + i + "'value='" + myQuestions[i].answers[j] + "''>" + myQuestions[i].answers[j])
+                $(".questions").append("<br><input type='radio' name='question-" + i + "'value='" + myQuestions[i].answers[j] + "''>" + myQuestions[i].answers[j])
 
             }
 
