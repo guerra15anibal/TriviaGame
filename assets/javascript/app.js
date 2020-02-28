@@ -114,9 +114,9 @@ $(document).ready(function () {
     function displayResults() {
         console.log("display results functions")
         clearInterval(timer);
-        $(".questions").html("<h2>Results </h2>");
-        $(".questions").append("<h3> Correct Answers: " + corret + "</h3>")
-        $(".questions").append("<h3> InCorrect Answers: " + incorrect + "</h3>")
+        $(".questions").html("<h3>Results </h3>");
+        $(".questions").append("<h3> CORRECT ANSWERS: " + corret + "</h3>")
+        $(".questions").append("<h3> INCORRECT ANSWERS: " + incorrect + "</h3>")
     }
 
 

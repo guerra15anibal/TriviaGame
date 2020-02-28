@@ -10,6 +10,10 @@ h1{
 
 }
 
+h3{
+    color: black;
+}
+
 body{
     background-repeat: no-repeat;
     background-size: cover;
