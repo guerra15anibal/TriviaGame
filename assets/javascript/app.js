@@ -22,14 +22,14 @@ $(document).ready(function () {
             correctAnswer: "Greenback Cutthroat Trout"
         },
         {
-            questions: "What is Colorado's State song?",
+            questions: "What is Colorado's State Song?",
             answers: [
-                "Where the Columbine's Grow",
-                "Oh Colorado!",
-                "I'ev Been Working on the Railroad",
-                "Baby Got Back"
+                "Baby got Back",
+                "I've been Working on the Railroad",
+                "Where the Columbines grow",
+                "The wheels on the Bus"
             ],
-            correctAnswer: "Where the Columbine's Grow"
+            correctAnswer: "Where the Columbines grow"
         },
         {
             questions: "What is Colorado's State flower?",
@@ -97,7 +97,7 @@ $(document).ready(function () {
     })
     function gameOver() {
         var inputs = $(".questions").children("input:checked");
-        console.log(inputs)
+        console.log("input:checked")
         for (let i = 0; i < inputs.length; i++) {
             if ($(inputs[i]).val() === myQuestions[i].correctAnswer) {
                 corret++;
